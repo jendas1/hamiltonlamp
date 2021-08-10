@@ -1,0 +1,85 @@
+global device ML_STAR ("BatchAliquotHighBorder.lay", "ML_STAR", hslTrue);
+ namespace _Method { #include "easyPickLibrary\\easyPick_Helper.hs_" } 
+ namespace _Method { #include "easyPickLibrary\\easyPick_Library.hsl" } 
+ namespace _Method { #include "HslHamHeaterShakerLib.hsl" } 
+#include "BatchAliquotHighBorder.res"
+/* {{ 2 "LibraryInsertLine" "" */ // }} ""
+global variable heaterID;
+/* {{ 2 "VariableInsertLine" "" */ // }} ""
+// {{ 2 "TemplateIncludeBlock" ""
+ namespace _Method { #include "HSLMETEDLib.hs_" } 
+ namespace _Method { #include "HSLMECCLib.hs_" } 
+ namespace _Method { #include "HSLPTLLib.hsl" } 
+// }} ""
+// {{{ 2 "LocalSubmethodInclude" ""
+ namespace _Method {  #include __filename__ ".sub"  } 
+// }} ""
+/* {{ 2 "ProcessInsertLine" "" */ // }} ""
+// {{{ 5 "main" "Begin"
+namespace _Method { method main(  ) void {
+// }} ""
+// {{ 5 "main" "InitLocals"
+// }} ""
+// {{ 2 "AutoInitBlock" ""
+PTL::SetWashingStateDefault("RinseTime1", 5);
+PTL::SetWashingStateDefault("SoakTime1", 5);
+PTL::SetWashingStateDefault("FlowRate1", 11);
+PTL::SetWashingStateDefault("RinseTime2", 0);
+PTL::SetWashingStateDefault("SoakTime2", 0);
+PTL::SetWashingStateDefault("FlowRate2", 11);
+PTL::SetWashingStateDefault("DrainingTime", 10);
+PTL::SetWashingStateDefault("StartWashLiquid", 0);
+PTL::SetLoadingStateDefault("RecoveryOptionContinue", hslTrue);
+PTL::SetLoadingStateDefault("RecoveryOptionExclude", hslTrue);
+PTL::SetLoadingStateDefault("RecoveryOptionDefault", 0);
+PTL::SetLoadingStateDefault("KitLotCheckEnabled", hslFalse);
+EASYPICK_HELPER::_InitLibrary();
+::RegisterAbortHandler( "OnAbort");
+// }} ""
+// {{ 1 1 0 "50b8074c_a588_43b5_876fdff281f5c2a1" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{{ 2 1 0 "6a607e7b_0435_4fc4_84866b63580c2cc0" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+OnStart();
+// }} ""
+// {{ 3 1 0 "fc035ff8_8dfb_421c_a0b85693073ee172" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{{ 4 1 0 "5664a8e1_71b7_45ae_89cdcfa58517bdd4" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+MasterMixPreparation(0.05);
+// }} ""
+// {{{ 5 1 0 "43a490f8_d592_4dbb_8511d2c3fc2efbc3" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+QCAliquotMini();
+// }} ""
+// {{{ 6 1 0 "de6e57e0_c1f6_416b_bf5ea8e329e1d01d" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+HeatAndQC();
+// }} ""
+/* {{ 1 "" "0" */ if(0){  /* }} "" */
+// {{ 7 1 0 "ca32aa2a_6acc_4175_a851d951893b0c9a" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{{ 8 1 0 "d8a3f694_6c3e_4f64_8030ce9b327da3a1" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+MasterMixPreparation(25);
+// }} ""
+// {{{ 9 1 0 "4f49cb3d_aec6_45eb_96db6013682dfdd2" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+BatchAliquot(5);
+// }} ""
+// {{ 10 1 0 "bca975de_8b68_4021_9ad8c7e24ee7fd02" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{ 11 1 0 "851d291c_c09f_496e_982cbb52957448e4" "ML_STAR:{7EF8970F-F753-4c75-AD76-0E0D9C2CC9CD}"
+{
+	ML_STAR._7EF8970F_F753_4c75_AD76_0E0D9C2CC9CD("851d291c_c09f_496e_982cbb52957448e4"); // EasyCOREGripTransport
+}
+// }} ""
+/* {{ 1 "" "1" */ } /* }} "" */
+// {{ 12 1 0 "ba4e4613_c893_4e65_b49940abd6e6f003" "{930D6C31-8EFB-11d4-A3BA-002035848439}"
+abort;
+// }} ""
+// {{ 2 "AutoExitBlock" ""
+EASYPICK_HELPER::_ExitLibrary();
+// }} ""
+// {{{ 5 "main" "End"
+} }
+// }} ""
+// $$author=molbiotech$$valid=0$$time=2021-07-22 15:27$$checksum=700945fa$$length=089$$
