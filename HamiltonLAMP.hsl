@@ -1,10 +1,10 @@
-global device ML_STAR ("BatchAliquotHighBorder.lay", "ML_STAR", hslTrue);
  namespace _Method { #include "easyPickLibrary\\easyPick_Helper.hs_" } 
  namespace _Method { #include "easyPickLibrary\\easyPick_Library.hsl" } 
  namespace _Method { #include "HslHamHeaterShakerLib.hsl" } 
-#include "BatchAliquotHighBorder.res"
+#include "HamiltonLAMP.res"
 /* {{ 2 "LibraryInsertLine" "" */ // }} ""
 global variable heaterID;
+global device ML_STAR ("HamiltonLAMP.lay", "ML_STAR", hslTrue);
 /* {{ 2 "VariableInsertLine" "" */ // }} ""
 // {{ 2 "TemplateIncludeBlock" ""
  namespace _Method { #include "HSLMETEDLib.hs_" } 
@@ -82,4 +82,4 @@ EASYPICK_HELPER::_ExitLibrary();
 // {{{ 5 "main" "End"
 } }
 // }} ""
-// $$author=molbiotech$$valid=0$$time=2021-07-22 15:27$$checksum=700945fa$$length=089$$
+// $$author=jenda$$valid=0$$time=2021-08-10 18:22$$checksum=772dfde0$$length=084$$
