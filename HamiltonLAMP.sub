@@ -54,12 +54,14 @@ EASYPICK_HELPER::EasyStep_Init(ML_STAR, EASYPICK::_HSLTRUE);
 // {{{ 85 1 0 "7056485b_5264_4d4c_b1d93000d00b5bc4" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 HSLHamHeaterShaker::StartTempCtrl(heaterID, 68, 1);
 // }} ""
+/* {{ 1 "" "0" */ if(0){  /* }} "" */
 // {{{ 86 1 0 "bd35c2b5_ff88_411f_b4a5408151dc6e9e" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
 EASYPICK_HELPER::Camera_Place_to_BacterialPlate(ML_STAR, Translate("Nun_96_Fl_Hb_0001"));
 // }} ""
 // {{{ 87 1 0 "1ff6d2c8_6be3_4121_aca4cdb22efc8205" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 EASYPICK::APPLICATION::PictureFile_Take(Translate("D:\beforeHeat.png"), 100, EASYPICK::PICTUREFILE::SAVEFORMAT::_PNG, EASYPICK::PICTUREFILE::COLORMODE::_COLOR);
 // }} ""
+/* {{ 1 "" "1" */ } /* }} "" */
 // {{ 88 1 0 "3885780b_dd30_405c_80020d4443a79325" "ML_STAR:{7EF8970F-F753-4c75-AD76-0E0D9C2CC9CD}"
 {
 	ML_STAR._7EF8970F_F753_4c75_AD76_0E0D9C2CC9CD("3885780b_dd30_405c_80020d4443a79325"); // EasyCOREGripTransport
@@ -88,12 +90,14 @@ HSLHamHeaterShaker::Terminate();
 	ML_STAR._7EF8970F_F753_4c75_AD76_0E0D9C2CC9CD("a484dd7e_5af0_4e6c_845fd5be86ade426"); // EasyCOREGripTransport
 }
 // }} ""
+/* {{ 1 "" "0" */ if(0){  /* }} "" */
 // {{{ 94 1 0 "5a93ced8_7ea1_44ec_b72ee27d5748a297" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
 EASYPICK_HELPER::Camera_Place_to_BacterialPlate(ML_STAR, Translate("Nun_96_Fl_Hb_0001"));
 // }} ""
 // {{{ 95 1 0 "6c8076c3_48ce_4cf1_97a0a89c3cb67556" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 EASYPICK::APPLICATION::PictureFile_Take(Translate("D:\afterHeat.png"), 100, EASYPICK::PICTUREFILE::SAVEFORMAT::_PNG, EASYPICK::PICTUREFILE::COLORMODE::_COLOR);
 // }} ""
+/* {{ 1 "" "1" */ } /* }} "" */
 // {{{ 5 "HeatAndQC" "End"
 }
 // }} ""
@@ -1878,4 +1882,4 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.PositiveContr
 }
 // }} ""
 /* {{ 2 "SubmethodInsertLine" "" */ // }} ""
-// $$author=jenda$$valid=0$$time=2021-09-19 19:33$$checksum=23f2ade2$$length=084$$
+// $$author=jenda$$valid=0$$time=2021-09-19 20:19$$checksum=af7d8ff7$$length=084$$
