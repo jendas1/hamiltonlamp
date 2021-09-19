@@ -4,6 +4,7 @@ private function HeatAndQC(  ) void ;
 private function MasterMixPreparation( variable plates ) void ;
 private function OnStart(  ) void ;
 private function QCAliquotMini(  ) void ;
+private function QCAliquotMiniOldV1(  ) void ;
 private function QCAliquotWIP(  ) void ;
 function OnAbort(  ) void ;
 // }} ""
@@ -12,13 +13,13 @@ function OnAbort(  ) void {
 // }} ""
 // {{ 5 "OnAbort" "InitLocals"
 // }} ""
-// {{{ 151 1 0 "ff7b83fa_daf9_4167_a85fa607ce073680" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+// {{{ 159 1 0 "ff7b83fa_daf9_4167_a85fa607ce073680" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 HSLHamHeaterShaker::StopTempCtrl(heaterID);
 // }} ""
-// {{{ 152 1 0 "fba52c38_6014_437f_ab166feb6af7315a" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+// {{{ 160 1 0 "fba52c38_6014_437f_ab166feb6af7315a" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 HSLHamHeaterShaker::Terminate();
 // }} ""
-// {{{ 153 1 0 "26d26b5f_0bd0_464a_88cee3458b45f415" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+// {{{ 161 1 0 "26d26b5f_0bd0_464a_88cee3458b45f415" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
 EASYPICK::INIT::DeInit();
 // }} ""
 // {{{ 5 "OnAbort" "End"
@@ -101,13 +102,13 @@ private function QCAliquotWIP(  ) void {
 // }} ""
 // {{ 5 "QCAliquotWIP" "InitLocals"
 // }} ""
-// {{ 134 1 0 "fa87d215_9df7_4a0d_96638061342179ff" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 142 1 0 "fa87d215_9df7_4a0d_96638061342179ff" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 135 1 0 "617415fd_a429_4dc5_ae5c268a0383aa07" "{B31F353C-5D80-11d4-A5EB-0050DA737D89}"
+// {{ 143 1 0 "617415fd_a429_4dc5_ae5c268a0383aa07" "{B31F353C-5D80-11d4-A5EB-0050DA737D89}"
 ML_STAR.QC_Plate_Col_1.SetCount(2);
 // }} ""
-// {{ 136 1 0 "35af5841_c380_435e_9cd33ab134d7c902" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 144 1 0 "35af5841_c380_435e_9cd33ab134d7c902" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -161,7 +162,7 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.MasterMixX8, 
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 137 1 0 "62e21ffe_fb22_4dac_81f3a9c5b58e70d9" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 145 1 0 "62e21ffe_fb22_4dac_81f3a9c5b58e70d9" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -215,11 +216,11 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.MasterMixX8, 
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 138 1 0 "9096775f_1e6f_4b9e_b3bc28b7f265f93c" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 146 1 0 "9096775f_1e6f_4b9e_b3bc28b7f265f93c" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
 /* {{ 1 "" "0" */ if(0){  /* }} "" */
-// {{ 139 1 0 "9921cb42_d6cf_418e_902436081eedb1f3" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 147 1 0 "9921cb42_d6cf_418e_902436081eedb1f3" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -273,7 +274,7 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.QC_Plate_Col_
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 140 1 0 "b8849067_51f3_4188_97f9035100e2bdae" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 148 1 0 "b8849067_51f3_4188_97f9035100e2bdae" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -333,10 +334,10 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.waterX8, ML_S
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 141 1 0 "35449ec4_732c_4c5d_9c1d07cc48802284" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 149 1 0 "35449ec4_732c_4c5d_9c1d07cc48802284" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 142 1 0 "bff546e6_80cc_42c9_9eeba0ada60795a0" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 150 1 0 "bff546e6_80cc_42c9_9eeba0ada60795a0" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -390,7 +391,7 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.QC_Plate_Col_
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 143 1 0 "c1bc1491_d322_40a5_b409ed102bfa934b" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 151 1 0 "c1bc1491_d322_40a5_b409ed102bfa934b" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -447,10 +448,10 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.waterX8, ML_S
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 144 1 0 "8a46e059_ee9b_457b_a73a24c6604c3474" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 152 1 0 "8a46e059_ee9b_457b_a73a24c6604c3474" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 145 1 0 "a8d3f052_1e55_4ca2_824fd73292de3d37" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 153 1 0 "a8d3f052_1e55_4ca2_824fd73292de3d37" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -504,7 +505,7 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.QC_Plate_Col_
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 146 1 0 "6bb08ba3_091d_4b01_ab677e5159a8cf18" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 154 1 0 "6bb08ba3_091d_4b01_ab677e5159a8cf18" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -561,10 +562,10 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.waterX8, ML_S
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 147 1 0 "0c9d096b_6259_43cc_b9773f135f1354f6" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 155 1 0 "0c9d096b_6259_43cc_b9773f135f1354f6" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 148 1 0 "82989ca1_4876_4698_a7694ee6a7af3ea5" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 156 1 0 "82989ca1_4876_4698_a7694ee6a7af3ea5" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -618,7 +619,7 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.QC_Plate_Col_
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 149 1 0 "6d3f32aa_1c9b_483c_b62b8c229712d984" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 157 1 0 "6d3f32aa_1c9b_483c_b62b8c229712d984" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
 /* {{ 1 "" "1" */ } /* }} "" */
@@ -1438,10 +1439,269 @@ private function QCAliquotMini(  ) void {
 // {{ 125 1 0 "3f2d51f5_e019_4825_9bddac9b3885bcf1" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 126 1 0 "bde50443_ba53_4b92_b4743045ac87cf91" "{B31F353C-5D80-11d4-A5EB-0050DA737D89}"
+// {{ 126 1 0 "9a3295e0_f542_42c5_b43524077edad362" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+PTL::ResetPipettingStateAndSequences("");
+PTL::SetPipettingState("UserResponseTime", hslInfinite);
+PTL::SetPipettingState("ErrorHandling", 3);
+PTL::SetPipettingState("TipCountingEnabled", hslFalse);
+PTL::SetPipettingState("TipCountingIdentifier", "");
+PTL::SetPipettingState("CopyPatternEnabled", hslFalse);
+PTL::SetPipettingState("ExcludeErrorPositionsEnabled", hslFalse);
+PTL::SetPipettingState("CalibrateCarrierChannel", -1);
+PTL::SetPipettingState("InitializeChannelVariable", "");
+PTL::SetPipettingState("InitializeEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupChannelVariable", "");
+PTL::SetPipettingState("TipPickupEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReloadable", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReducible", hslTrue);
+PTL::SetPipettingState("TipEjectChannelVariable", "");
+PTL::SetPipettingState("AspirateMode", 0);
+PTL::SetPipettingState("AspirateCLLDSensitivity", 5);
+PTL::SetPipettingState("AspirateFluidHeight", 0);
+PTL::SetPipettingState("AspirateSubmergeDepth", 1);
+PTL::SetPipettingState("AspirateChannelVariable", "");
+PTL::SetPipettingState("AspirateMaxHeightDiff", 0);
+PTL::SetPipettingState("AspiratePLLDSensitivity", 0);
+PTL::SetPipettingState("AspirateLiquidFollowing", hslTrue);
+PTL::SetPipettingState("AspirateUserDefinedLiquidClass", "StandardVolume_Serum_DispenseJet_Empty");
+PTL::SetPipettingState("AspirateSequenceReloadable", hslFalse);
+PTL::SetPipettingState("AspirateSequenceReducible", hslFalse);
+PTL::SetPipettingState("AspirateSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("AspirateSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("AspirateSequenceCountInitialization", -9);
+PTL::SetPipettingState("AspirateSequenceCountFinalization", -8);
+PTL::SetPipettingState("AspirateSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseSubmergeDepth", 0);
+PTL::SetPipettingState("DispenseChannelVariable", "");
+PTL::SetPipettingState("DispenseCLLDSensitivity", 0);
+PTL::SetPipettingState("DispenseFluidHeight", 1);
+PTL::SetPipettingState("DispenseMode", 1);
+PTL::SetPipettingState("DispenseLiquidFollowing", hslTrue);
+PTL::SetPipettingState("DispenseUserDefinedLiquidClass", "StandardVolume_Serum_DispenseJet_Empty");
+PTL::SetPipettingState("DispenseSequenceReloadable", hslFalse);
+PTL::SetPipettingState("DispenseSequenceReducible", hslFalse);
+PTL::SetPipettingState("DispenseSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("DispenseSequenceCountInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCountFinalization", -8);
+PTL::SetPipettingState("DispenseSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseRestVolumeDestination", 0);
+PTL::SetPipettingState("DispenseRestVolumeToAspirateSequenceSurface", hslFalse);
+PTL::SetPipettingState("DispenseRestVolumeFluidHeight", 0);
+if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.MasterMix, ML_STAR.QC_Pos, 1, 1, 18, 0, 2, hslInfinite, hslInfinite, hslInfinite, "") )
+{
+    PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
+}
+// }} ""
+// {{ 127 1 0 "74298616_51de_4cf5_bf8fd5871660e9b3" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{ 128 1 0 "e4677eeb_c932_484a_978ccada7046526f" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+PTL::ResetPipettingStateAndSequences("");
+PTL::SetPipettingState("UserResponseTime", hslInfinite);
+PTL::SetPipettingState("ErrorHandling", 3);
+PTL::SetPipettingState("TipCountingEnabled", hslFalse);
+PTL::SetPipettingState("TipCountingIdentifier", "");
+PTL::SetPipettingState("CopyPatternEnabled", hslFalse);
+PTL::SetPipettingState("ExcludeErrorPositionsEnabled", hslFalse);
+PTL::SetPipettingState("CalibrateCarrierChannel", -1);
+PTL::SetPipettingState("InitializeChannelVariable", "");
+PTL::SetPipettingState("InitializeEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupChannelVariable", "");
+PTL::SetPipettingState("TipPickupEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReloadable", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReducible", hslTrue);
+PTL::SetPipettingState("TipEjectChannelVariable", "");
+PTL::SetPipettingState("AspirateMode", 0);
+PTL::SetPipettingState("AspirateCLLDSensitivity", 5);
+PTL::SetPipettingState("AspirateFluidHeight", 0);
+PTL::SetPipettingState("AspirateSubmergeDepth", 1);
+PTL::SetPipettingState("AspirateChannelVariable", "");
+PTL::SetPipettingState("AspirateMaxHeightDiff", 0);
+PTL::SetPipettingState("AspiratePLLDSensitivity", 0);
+PTL::SetPipettingState("AspirateLiquidFollowing", hslTrue);
+PTL::SetPipettingState("AspirateUserDefinedLiquidClass", "StandardVolume_Serum_DispenseSurface_Empty");
+PTL::SetPipettingState("AspirateSequenceReloadable", hslFalse);
+PTL::SetPipettingState("AspirateSequenceReducible", hslFalse);
+PTL::SetPipettingState("AspirateSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("AspirateSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("AspirateSequenceCountInitialization", -9);
+PTL::SetPipettingState("AspirateSequenceCountFinalization", -8);
+PTL::SetPipettingState("AspirateSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseSubmergeDepth", 0);
+PTL::SetPipettingState("DispenseChannelVariable", "");
+PTL::SetPipettingState("DispenseCLLDSensitivity", 0);
+PTL::SetPipettingState("DispenseFluidHeight", 1);
+PTL::SetPipettingState("DispenseMode", 3);
+PTL::SetPipettingState("DispenseLiquidFollowing", hslTrue);
+PTL::SetPipettingState("DispenseUserDefinedLiquidClass", "StandardVolume_Serum_DispenseSurface_Empty");
+PTL::SetPipettingState("DispenseSequenceReloadable", hslFalse);
+PTL::SetPipettingState("DispenseSequenceReducible", hslFalse);
+PTL::SetPipettingState("DispenseSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("DispenseSequenceCountInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCountFinalization", -8);
+PTL::SetPipettingState("DispenseSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseRestVolumeDestination", 0);
+PTL::SetPipettingState("DispenseRestVolumeToAspirateSequenceSurface", hslFalse);
+PTL::SetPipettingState("DispenseRestVolumeFluidHeight", 0);
+PTL::SetPipettingState("DispensePrerinsingMixCycles", 1);
+PTL::SetPipettingState("DispensePrerinsingMixPosition", 1);
+PTL::SetPipettingState("DispensePrerinsingMixVolume", 10);
+if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.water, ML_STAR.QC_NegPos, 1, 1, 2, 0, 2, hslInfinite, hslInfinite, 1, "") )
+{
+    PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
+}
+// }} ""
+// {{ 129 1 0 "5e61b0d2_6e5e_48ce_899c93937d9246bf" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+PTL::ResetPipettingStateAndSequences("");
+PTL::SetPipettingState("UserResponseTime", hslInfinite);
+PTL::SetPipettingState("ErrorHandling", 3);
+PTL::SetPipettingState("TipCountingEnabled", hslFalse);
+PTL::SetPipettingState("TipCountingIdentifier", "");
+PTL::SetPipettingState("CopyPatternEnabled", hslFalse);
+PTL::SetPipettingState("ExcludeErrorPositionsEnabled", hslFalse);
+PTL::SetPipettingState("CalibrateCarrierChannel", -1);
+PTL::SetPipettingState("InitializeChannelVariable", "");
+PTL::SetPipettingState("InitializeEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupChannelVariable", "");
+PTL::SetPipettingState("TipPickupEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReloadable", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReducible", hslTrue);
+PTL::SetPipettingState("TipEjectChannelVariable", "");
+PTL::SetPipettingState("AspirateMode", 0);
+PTL::SetPipettingState("AspirateCLLDSensitivity", 5);
+PTL::SetPipettingState("AspirateFluidHeight", 0);
+PTL::SetPipettingState("AspirateSubmergeDepth", 1);
+PTL::SetPipettingState("AspirateChannelVariable", "");
+PTL::SetPipettingState("AspirateMaxHeightDiff", 0);
+PTL::SetPipettingState("AspiratePLLDSensitivity", 0);
+PTL::SetPipettingState("AspirateLiquidFollowing", hslTrue);
+PTL::SetPipettingState("AspirateUserDefinedLiquidClass", "StandardVolume_Water_DispenseSurface_Empty");
+PTL::SetPipettingState("AspirateSequenceReloadable", hslFalse);
+PTL::SetPipettingState("AspirateSequenceReducible", hslFalse);
+PTL::SetPipettingState("AspirateSequenceCurrentInitialization", -10);
+PTL::SetPipettingState("AspirateSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("AspirateSequenceCountInitialization", -10);
+PTL::SetPipettingState("AspirateSequenceCountFinalization", -8);
+PTL::SetPipettingState("AspirateSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseSubmergeDepth", 1);
+PTL::SetPipettingState("DispenseChannelVariable", "");
+PTL::SetPipettingState("DispenseCLLDSensitivity", 5);
+PTL::SetPipettingState("DispenseFluidHeight", 0);
+PTL::SetPipettingState("DispenseMode", 3);
+PTL::SetPipettingState("DispenseLiquidFollowing", hslTrue);
+PTL::SetPipettingState("DispenseUserDefinedLiquidClass", "StandardVolume_Water_DispenseSurface_Empty");
+PTL::SetPipettingState("DispenseSequenceReloadable", hslFalse);
+PTL::SetPipettingState("DispenseSequenceReducible", hslFalse);
+PTL::SetPipettingState("DispenseSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("DispenseSequenceCountInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCountFinalization", -8);
+PTL::SetPipettingState("DispenseSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseRestVolumeDestination", 0);
+PTL::SetPipettingState("DispenseRestVolumeToAspirateSequenceSurface", hslFalse);
+PTL::SetPipettingState("DispenseRestVolumeFluidHeight", 0);
+PTL::SetPipettingState("DispensePrerinsingMixCycles", 1);
+PTL::SetPipettingState("DispensePrerinsingMixPosition", 1);
+PTL::SetPipettingState("DispensePrerinsingMixVolume", 10);
+if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.PositiveControl, ML_STAR.QC_PosPos, 1, 1, 2, 0, 1, hslInfinite, hslInfinite, 1, "") )
+{
+    PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
+}
+// }} ""
+// {{ 130 1 0 "c4d1ab3d_ada6_4c01_b059c11a38bfe2a9" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{ 131 1 0 "5766c8f0_4174_4dd4_9ad85da7c8097773" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+PTL::ResetPipettingStateAndSequences("");
+PTL::SetPipettingState("UserResponseTime", hslInfinite);
+PTL::SetPipettingState("ErrorHandling", 3);
+PTL::SetPipettingState("TipCountingEnabled", hslFalse);
+PTL::SetPipettingState("TipCountingIdentifier", "");
+PTL::SetPipettingState("CopyPatternEnabled", hslFalse);
+PTL::SetPipettingState("ExcludeErrorPositionsEnabled", hslFalse);
+PTL::SetPipettingState("CalibrateCarrierChannel", -1);
+PTL::SetPipettingState("InitializeChannelVariable", "");
+PTL::SetPipettingState("InitializeEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupChannelVariable", "");
+PTL::SetPipettingState("TipPickupEnabled", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReloadable", hslTrue);
+PTL::SetPipettingState("TipPickupSequenceReducible", hslTrue);
+PTL::SetPipettingState("TipEjectChannelVariable", "");
+PTL::SetPipettingState("AspirateMode", 0);
+PTL::SetPipettingState("AspirateCLLDSensitivity", 5);
+PTL::SetPipettingState("AspirateFluidHeight", 0);
+PTL::SetPipettingState("AspirateSubmergeDepth", 1);
+PTL::SetPipettingState("AspirateChannelVariable", "");
+PTL::SetPipettingState("AspirateMaxHeightDiff", 0);
+PTL::SetPipettingState("AspiratePLLDSensitivity", 0);
+PTL::SetPipettingState("AspirateLiquidFollowing", hslTrue);
+PTL::SetPipettingState("AspirateUserDefinedLiquidClass", "StandardVolumeAcetonitrilDispenseJet_Empty");
+PTL::SetPipettingState("AspirateSequenceReloadable", hslFalse);
+PTL::SetPipettingState("AspirateSequenceReducible", hslFalse);
+PTL::SetPipettingState("AspirateSequenceCurrentInitialization", -10);
+PTL::SetPipettingState("AspirateSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("AspirateSequenceCountInitialization", -10);
+PTL::SetPipettingState("AspirateSequenceCountFinalization", -8);
+PTL::SetPipettingState("AspirateSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseSubmergeDepth", 0);
+PTL::SetPipettingState("DispenseChannelVariable", "");
+PTL::SetPipettingState("DispenseCLLDSensitivity", 0);
+PTL::SetPipettingState("DispenseFluidHeight", 1);
+PTL::SetPipettingState("DispenseMode", 1);
+PTL::SetPipettingState("DispenseLiquidFollowing", hslTrue);
+PTL::SetPipettingState("DispenseUserDefinedLiquidClass", "StandardVolumeAcetonitrilDispenseJet_Empty");
+PTL::SetPipettingState("DispenseSequenceReloadable", hslFalse);
+PTL::SetPipettingState("DispenseSequenceReducible", hslFalse);
+PTL::SetPipettingState("DispenseSequenceCurrentInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCurrentFinalization", -7);
+PTL::SetPipettingState("DispenseSequenceCountInitialization", -9);
+PTL::SetPipettingState("DispenseSequenceCountFinalization", -8);
+PTL::SetPipettingState("DispenseSequenceCalibration", hslTrue);
+PTL::SetPipettingState("DispenseRestVolumeDestination", 0);
+PTL::SetPipettingState("DispenseRestVolumeToAspirateSequenceSurface", hslFalse);
+PTL::SetPipettingState("DispenseRestVolumeFluidHeight", 0);
+if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.Mineral_Oil, ML_STAR.QC_Pos, 1, 1, 10, 0, 2, hslInfinite, hslInfinite, hslInfinite, "") )
+{
+    PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
+}
+// }} ""
+// {{{ 5 "QCAliquotMini" "End"
+}
+// }} ""
+// {{{ 5 "OnStart" "Begin"
+private function OnStart(  ) void {
+// }} ""
+// {{ 5 "OnStart" "InitLocals"
+// }} ""
+// {{{ 120 1 0 "d2317029_4565_436e_993bae2f9e6ff8bf" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+HSLHamHeaterShaker::CreateStarDevice(ML_STAR, 2, heaterID);
+// }} ""
+// {{{ 121 1 0 "657b0e80_1308_420f_a4c20accafeba6e1" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+EASYPICK::INIT::Init(ML_STAR, 1, 1);
+// }} ""
+// {{{ 122 1 0 "6049d025_3cd5_47cf_87d911d2a9b78c29" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
+HSLHamHeaterShaker::StartTempCtrl(heaterID, 68, 0);
+// }} ""
+// {{{ 123 1 0 "bf5733d4_dde3_40ee_a4ff61bf38fe0965" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+EASYPICK_HELPER::EasyStep_Init(ML_STAR, EASYPICK::_HSLTRUE);
+// }} ""
+// {{{ 5 "OnStart" "End"
+}
+// }} ""
+// {{{ 5 "QCAliquotMiniOldV1" "Begin"
+private function QCAliquotMiniOldV1(  ) void {
+// }} ""
+// {{ 5 "QCAliquotMiniOldV1" "InitLocals"
+// }} ""
+// {{ 133 1 0 "cad406ef_fdc1_4fdd_99c736c0e5d2d695" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+
+// }} ""
+// {{ 134 1 0 "9bb87015_0836_4a70_ac18cf9c62f50756" "{B31F353C-5D80-11d4-A5EB-0050DA737D89}"
 ML_STAR.QC_Plate_Col_1.SetCount(2);
 // }} ""
-// {{ 127 1 0 "967c24d6_7c73_44c6_aed6075716ebacbe" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 135 1 0 "993e3dec_8755_44bb_9f3636ba1d6ad879" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -1495,13 +1755,13 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.MasterMixX8, 
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{ 128 1 0 "2bb38483_5c03_4c42_8cf3b895f4c33423" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 136 1 0 "d9acb3e4_2725_43b4_9dd3ab6833ce2915" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{ 129 1 0 "0d7298e2_e7d3_4af3_8add965429f0f06e" "{B31F353A-5D80-11d4-A5EB-0050DA737D89}"
+// {{ 137 1 0 "be2d9a44_67e6_450e_8385673668c6c873" "{B31F353A-5D80-11d4-A5EB-0050DA737D89}"
 ML_STAR.QC_Plate_Col_1.SetCurrentPosition(1);
 // }} ""
-// {{ 130 1 0 "3a09a4a2_a7bb_426b_9834addd4b21073e" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 138 1 0 "54456dd0_0397_404a_9fc45a589facfbca" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -1556,11 +1816,11 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.QC_Plate_Col_
 }
 // }} ""
 /* {{ 1 "" "0" */ if(0){  /* }} "" */
-// {{ 131 1 0 "3966043e_5544_4444_b8142772afbf9489" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
+// {{ 139 1 0 "f652c25b_d341_41ba_9f096591ae8694bc" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
 /* {{ 1 "" "1" */ } /* }} "" */
-// {{ 132 1 0 "a058c98f_28cb_45b1_b362b130d5f090f0" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
+// {{ 140 1 0 "ff62dd9e_b94f_4ffe_8a304440ddd0e4d2" "{B558D25C-EB8A-4a43-8878-125E1847965C}"
 PTL::ResetPipettingStateAndSequences("");
 PTL::SetPipettingState("UserResponseTime", hslInfinite);
 PTL::SetPipettingState("ErrorHandling", 3);
@@ -1614,28 +1874,8 @@ if( 0 == PTL::Pipette(ML_STAR, ML_STAR.ST_L_NE_stack_0001, ML_STAR.PositiveContr
     PTL::RaiseRuntimeError(-1573650176, PTL::IDS::smartStepPipette, PTL::IDS::smartStepFailed, "HxGRUCompCmd");
 }
 // }} ""
-// {{{ 5 "QCAliquotMini" "End"
-}
-// }} ""
-// {{{ 5 "OnStart" "Begin"
-private function OnStart(  ) void {
-// }} ""
-// {{ 5 "OnStart" "InitLocals"
-// }} ""
-// {{{ 120 1 0 "d2317029_4565_436e_993bae2f9e6ff8bf" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
-HSLHamHeaterShaker::CreateStarDevice(ML_STAR, 2, heaterID);
-// }} ""
-// {{{ 121 1 0 "657b0e80_1308_420f_a4c20accafeba6e1" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
-EASYPICK::INIT::Init(ML_STAR, 1, 1);
-// }} ""
-// {{{ 122 1 0 "6049d025_3cd5_47cf_87d911d2a9b78c29" "{C1F3C015-47B3-4514-9407-AC2E65043419}"
-HSLHamHeaterShaker::StartTempCtrl(heaterID, 68, 0);
-// }} ""
-// {{{ 123 1 0 "bf5733d4_dde3_40ee_a4ff61bf38fe0965" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
-EASYPICK_HELPER::EasyStep_Init(ML_STAR, EASYPICK::_HSLTRUE);
-// }} ""
-// {{{ 5 "OnStart" "End"
+// {{{ 5 "QCAliquotMiniOldV1" "End"
 }
 // }} ""
 /* {{ 2 "SubmethodInsertLine" "" */ // }} ""
-// $$author=jenda$$valid=0$$time=2021-08-10 18:22$$checksum=6720c95a$$length=084$$
+// $$author=jenda$$valid=0$$time=2021-09-19 19:33$$checksum=23f2ade2$$length=084$$
