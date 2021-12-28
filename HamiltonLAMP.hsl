@@ -5,6 +5,8 @@
 /* {{ 2 "LibraryInsertLine" "" */ // }} ""
 global variable heaterID;
 global device ML_STAR ("HamiltonLAMP.lay", "ML_STAR", hslTrue);
+global variable printing_variable;
+global variable reactions_with_slack;
 /* {{ 2 "VariableInsertLine" "" */ // }} ""
 // {{ 2 "TemplateIncludeBlock" ""
  namespace _Method { #include "HSLMETEDLib.hs_" } 
@@ -45,14 +47,14 @@ OnStart();
 // {{ 3 1 0 "fc035ff8_8dfb_421c_a0b85693073ee172" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
 
 // }} ""
-// {{{ 4 1 0 "e8361247_849f_4035_9032708f8c65d200" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
-MasterMixPreparation(0.08);
+// {{{ 4 1 0 "1511cefc_61bf_40b3_9349b1048857a1b1" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+MasterMixPreparation(0.1);
 // }} ""
 // {{{ 5 1 0 "43a490f8_d592_4dbb_8511d2c3fc2efbc3" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
 QCAliquotMini();
 // }} ""
-// {{{ 6 1 0 "de6e57e0_c1f6_416b_bf5ea8e329e1d01d" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
-HeatAndQC();
+// {{{ 6 1 0 "cd043aad_310a_435c_81c8b0b178673643" "{7C4EF7A7-39BE-406a-897F-71F3A35B4093}"
+HeatAndQC("1");
 // }} ""
 /* {{ 1 "" "0" */ if(0){  /* }} "" */
 // {{ 7 1 0 "ca32aa2a_6acc_4175_a851d951893b0c9a" "{F07B0071-8EFC-11d4-A3BA-002035848439}"
@@ -82,4 +84,4 @@ EASYPICK_HELPER::_ExitLibrary();
 // {{{ 5 "main" "End"
 } }
 // }} ""
-// $$author=jenda$$valid=0$$time=2021-09-19 20:19$$checksum=69e5eff5$$length=084$$
+// $$author=jenda$$valid=0$$time=2021-12-29 00:54$$checksum=6c2e5b44$$length=084$$
